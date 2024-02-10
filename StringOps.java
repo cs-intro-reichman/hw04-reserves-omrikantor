@@ -23,7 +23,8 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) 
     {
-        
+        String a = args[0];
+        System.out.println(camelCase(a));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -46,7 +47,12 @@ public class StringOps {
     public static String camelCase (String string) {
         String last = "";
         String str = lowerCase(string);
-        for(int i = 0; i < str.length(); i++)
+        int count = 0;
+        while (str.charAt(count) == ' ')
+        {
+            count++;
+        }
+        for (int i = count; i < str.length(); i++)
         {
             if (str.charAt(i) == ' ')
             {
