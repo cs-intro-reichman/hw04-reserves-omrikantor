@@ -56,8 +56,11 @@ public class StringOps {
         {
             if (str.charAt(i) == ' ')
             {
-                last += (char) (str.charAt(i + 1) - 32);
-                i++;
+                while (str.charAt(i) == ' ')
+                {
+                    i++;
+                }
+                last += (char) (str.charAt(i) - 32);
             }
             else
             {
